@@ -1,31 +1,37 @@
 # AI Study Predictor
 
-This is a simple machine learning project that predicts a student's score based on the number of hours they study.
+A simple machine learning project that predicts a student's score based on study hours. 
+
+
+## Project Overview
+This project uses a Linear Regression model to learn the relationship between study hours and exam scores. It then predicts a score based on user input.
+
 
 ## How it works
+- You enter study hours
+- The model is trained on a dataset of study hours and scores
+- It predicts the expected score
 
-The model is trained using a small dataset of study hours and corresponding scores.  
-It learns the relationship between the two and then predicts a score based on user input.
+
+## Technologies used
+- Python
+- Pandas
+- Scikit-learn
+
+
+## How to run
+
+Install dependencies:
+pip install pandas scikit-learn
+
+Run the project:
+python main.py
+
 
 ## Example
-
-When you run the program:
-
 Enter study hours: 6  
-Predicted score: 95.2
+Predicted score: 80.5
 
-## What I used
 
-- Python  
-- Pandas  
-- Scikit-learn (Linear Regression)
-
-## What I learned from this project
-
-- How to train a simple machine learning model  
-- How data is used to make predictions  
-- Basic workflow of an AI project in Python  
-
-## Note
-
-This is a beginner project I built while learning machine learning.
+## Author
+Built as a learning project for machine learning basics and algorithms.
