@@ -1,23 +1,32 @@
 import pandas as pd
+import os
 from sklearn.linear_model import LinearRegression
 
-# dataset (very small)
-data = {
-    "hours": [1, 2, 3, 4, 5],
-    "score": [20, 40, 50, 70, 90]
-}
+# 1. Get correct file path (prevents FileNotFoundError)
+file_path = os.path.join(os.path.dirname(__file__), "data", "dataset.csv")
 
-df = pd.DataFrame(data)
+# 2. Load dataset
+df = pd.read_csv(file_path)
 
-# inputs and outputs
+# 3. Split data
 X = df[["hours"]]
 y = df["score"]
 
-# model
+# 4. Create model
 model = LinearRegression()
+
+# 5. Train model
 model.fit(X, y)
 
-# prediction
-predicted = model.predict(pd.DataFrame([[6]], columns=["hours"]))
+# 6. Get user input
+try:
+    hours = float(input("Enter study hours: "))
 
-print("Predicted score for 6 hours:", predicted[0])
+    # 7. Predict
+    prediction = model.predict([[hours]])
+
+    # 8. Output result
+    print("Predicted score:", round(prediction[0], 2))
+
+except ValueError:
+    print("Please enter a valid number for study hours.")
